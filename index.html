@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .box {
+            width: 500px;
+            height: 600px;
+            border: 1px solid;
+            margin-top: 200px;
+            text-align: center;
+            border-color: orange;
+        }
+
+        .box h2 {
+            margin-top: 80px;
+            margin-bottom: 50px;
+
+        }
+
+        #inp {
+            outline: none;
+            width: 280px;
+            height: 34px;
+            font-size: 1.2rem;
+            border-color: coral;
+            margin-bottom: 76px;
+
+        }
+        #button{
+            width: 100px;
+            height: 35px;
+            font-size: 1.2rem;
+            background-color:rgb(9, 117, 112);
+            color: #fff;
+            border: 1px solid;
+            border-color:#fff;
+            border-radius: 5px;
+        }
+        #button:hover{
+            background-color: #fff;
+            color: black;
+            border-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="contents">
+                <h2>Enter Your Word</h2>
+                <input type="text" id="inp" placeholder="Word">
+                <h3>Number of Words : <label for="" id="display"></label></h3>
+            <button id="button" onclick="buttonClick()">Click</button>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        function buttonClick() {
+            let text = document.getElementById('inp').value;
+
+            let count = 1;
+            for (i = 0; i < text.length; i++) {
+                if (text[i] == " ") {
+                    count++;
+                }
+            }
+            let result=count;
+            document.getElementById('display').innerHTML=result;
+        }
+
+    </script>
+</body>
+
+</html>
